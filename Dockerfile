@@ -12,4 +12,5 @@ COPY ./standalone-ha.xml /opt/jboss/keycloak/standalone/configuration/docker-sta
 # 57601 - Failure detection client
 EXPOSE 7600 8080 57600 57601
 
+# When supplying extra args, these must be specified as well
 CMD [ "-b", "0.0.0.0", "--server-config", "docker-standalone-ha.xml" ]
