@@ -332,17 +332,17 @@
                     <protocol type="FRAG2"/>
                 </stack>
                 <stack name="tcp">
-                    <transport type="TCP" socket-binding="jgroups-tcp">
+                    <transport type="TCP" socket-binding="jgroups-tcp"><!--
                       <property name="external_addr">${jgroups.external.addr}</property>
-                      <property name="external_port">7600</property>
+                      <property name="external_port">7600</property>-->
                     </transport>
                     <protocol type="TCPPING">
                       <property name="initial_hosts">${jgroups.tcpping.initial_hosts}</property>
                       <property name="port_range">0</property>
                     </protocol>
-                    <protocol type="FD_SOCK" socket-binding="jgroups-tcp-fd">
+                    <protocol type="FD_SOCK" socket-binding="jgroups-tcp-fd"><!--
                       <property name="external_addr">${jgroups.external.addr}</property>
-                      <property name="client_bind_port">57601</property>
+                      <property name="client_bind_port">57601</property>-->
                     </protocol>
                     <protocol type="MERGE3"/>
                     <protocol type="FD"/>

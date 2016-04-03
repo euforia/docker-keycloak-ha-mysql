@@ -18,4 +18,9 @@ KEYCLOAK_PASSWORD - Initial admin password
 
 #### Usage
 
-	-b 0.0.0.0 --server-config docker-standalone-ha.xml -Djgroups.external.addr=xx.xx.xx.xx -Djgroups.tcpping.initial_hosts=xx.xx.xx.xx[vvvv],yy.yy.yy.yy[zzzz]
+	docker run -d --net=host \
+		-e MYSQL_DATABASE=keycloak -e MYSQL_USER=keycloak -e MYSQL_PASSWORD=password \
+		-e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin_password \
+		euforia/keycloak-ha-mysql \
+		-b 0.0.0.0 --server-config docker-standalone-ha.xml \
+		-Djgroups.tcpping.initial_hosts=xx.xx.xx.xx[vvvv],yy.yy.yy.yy[zzzz]
